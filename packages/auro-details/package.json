@@ -1,0 +1,27 @@
+{
+  "name": "auro-details",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "Sarah Grefalda <sarah.grefalda@alaskaair.com>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "src/auro-details.js",
+  "directories": {
+    "src": "src",
+    "test": "__tests__"
+  },
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "start": "es-dev-server --root-dir ../../ --node-resolve --watch --open packages/auro-details/index.html",
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "dependencies": {
+    "lit-element": "^2.3.1",
+    "lit-html": "^1.2.1"
+  },
+  "devDependencies": {
+    "es-dev-server": "^1.57.2"
+  }
+}

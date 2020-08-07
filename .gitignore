@@ -1,0 +1,26 @@
+.DS_Store
+node_modules/
+.cache/
+
+## Sass files built on demand from Token files
+package/**/demo/sass/_*.scss
+package/**/tokens/
+package/**/altImports/
+
+## CSS built from Sass process
+package/**/demo/css
+package/**/demo/sass/tokenProperties.scss
+package/**/src/auro-checkbox-group.css
+packages/**/src/auro-checkbox.css
+
+## *-css built from sass-render process
+package/**/*-css.js
+
+## Build on demand from npm
+package/**/demo/fonts
+
+## dist files
+package/**/dist/
+
+## Karma code coverage reports
+coverage/

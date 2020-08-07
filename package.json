@@ -1,0 +1,51 @@
+{
+  "name": "mono",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+  },
+  "//": [
+    "\"scripts\": {",
+    "  \"build\": \"npm run ciBuild\",",
+    "  \"bundler\": \"webpack --mode=production\",",
+    "  \"bundle:test\": \"webpack-dev-server\",",
+    "  \"cssLint\": \"stylelint './src/*.css'\",",
+    "  \"dev\": \"npm run sassBuild:watch\",",
+    "  \"distJS\": \"copyfiles -u 1 -V './src/**/*.js' ./dist\",",
+    "  \"sassRender\": \"sass-render src/*.css -t ./scripts/staticStyles-template.js\",",
+    "  \"sweep\": \"rm -rf ./temp ./demo/css ./demo/fonts ./dist ./src/tokens | rm ./src/*.css ./src/*-css.js\",",
+    "  \"esLint\": \"./node_modules/.bin/eslint src/auro-*.js\",",
+    "  \"lint\": \"npm-run-all cssLint test:yaml esLint\",",
+    "  \"test\": \"karma start --coverage\",",
+    "  \"test:watch\": \"karma start --auto-watch=true --single-run=false\",",
+    "  \"test:ci\": \"npm-run-all test lint\",",
+    "  \"test:yaml\": \"yamllint .travis.yml\",",
+    "  \"ciBuild\": \"npm-run-all sassBuild sassRender cssLint distJS bundler postinstall\",",
+    "  \"sassBuild\": \"npm-run-all sassBuild:demo sassBuild:component postCss:component sassRender\",",
+    "  \"sassBuild:dev\": \"npm-run-all sassBuild:demo sassBuild:component postCss:component sassRender\",",
+    "  \"sassBuild:demo\": \"node-sass ./demo/sass/ --output ./demo/css/\",",
+    "  \"sassBuild:component\": \"node-sass ./src/ --output ./src/\",",
+    "  \"sassBuild:watch\": \"nodemon -e scss --watch src --exec npm run sassBuild:dev\",",
+    "  \"postCss:component\": \"node ./scripts/postCss.js\",",
+    "  \"serve\": \"polymer serve --port 3002 --hostname 0.0.0.0\"",
+    "},"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "es-dev-server": "^1.57.2",
+    "lerna": "^3.22.1",
+    "lerna-wizard": "^1.1.1"
+  },
+  "browserslist": [
+    "last 4 version",
+    "> 1%",
+    "IE 11"
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm-run-all test lint bundler postinstall",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  }
+}
