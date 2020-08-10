@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
+    "postinstall": "lerna bootstrap --hoist",
+    "test": "karma start karma.config.js --coverage",
+    "test:watch": "karma start karma.config.js --auto-watch=true --single-run=false"
   },
   "//": [
     "\"scripts\": {",
@@ -33,7 +36,13 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@open-wc/testing": "^2.5.21",
+    "@open-wc/testing-karma": "^4.0.3",
+    "deepmerge": "^4.2.2",
     "es-dev-server": "^1.57.2",
+    "karma": "^5.1.1",
+    "karma-coverage-istanbul-reporter": "^3.0.3",
+    "karma-junit-reporter": "^2.0.1",
     "lerna": "^3.22.1",
     "lerna-wizard": "^1.1.1"
   },
@@ -47,5 +56,6 @@
       "pre-commit": "npm-run-all test lint bundler postinstall",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
-  }
+  },
+  "dependencies": {}
 }

@@ -22,5 +22,6 @@ package/**/demo/fonts
 ## dist files
 package/**/dist/
 
-## Karma code coverage reports
+## Karma reports
+reports/
 coverage/
