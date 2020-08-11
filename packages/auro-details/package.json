@@ -14,8 +14,7 @@
     "src"
   ],
   "scripts": {
-    "start": "es-dev-server --root-dir ../../ --node-resolve --watch --open packages/auro-details/index.html",
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "start": "es-dev-server --node-resolve --watch --open"
   },
   "dependencies": {
     "lit-element": "^2.3.1",

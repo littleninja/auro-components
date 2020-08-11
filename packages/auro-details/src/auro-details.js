@@ -26,8 +26,8 @@ class AuroDetails extends LitElement {
 
   static get styles() {
     return css`
-      div {
-        background: aliceblue;
+      .foo {
+        background: purple;
       }
     `;
   }
@@ -36,7 +36,7 @@ class AuroDetails extends LitElement {
   render() {
     return html`
       <div class=${this.cssClass}>
-        <slot></slot>
+        Walk a little
       </div>
     `;
   }
