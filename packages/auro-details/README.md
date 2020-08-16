@@ -1,11 +1,9 @@
-# `auro-details`
+# auro-details
 
-> TODO: description
+auro-details provides a summary and detail view of content
 
-## Usage
+## Properties
 
-```
-const auroDetails = require('auro-details');
-
-// TODO: DEMONSTRATE API
-```
+| Property   | Attribute  | Type     | Description                                  |
+|------------|------------|----------|----------------------------------------------|
+| `cssClass` | `cssClass` | `String` | Applies designated CSS class to DOM element. |

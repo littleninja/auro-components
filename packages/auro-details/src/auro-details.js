@@ -12,7 +12,7 @@ import { LitElement, html, css } from "lit-element";
  */
 
 // build the component class
-class AuroDetails extends LitElement {
+export class AuroDetails extends LitElement {
   // constructor() {
   //   super();
   // }

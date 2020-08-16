@@ -5,7 +5,9 @@
   "scripts": {
     "postinstall": "lerna bootstrap --hoist",
     "test": "karma start karma.config.js --coverage",
-    "test:watch": "karma start karma.config.js --auto-watch=true --single-run=false"
+    "test:watch": "karma start karma.config.js --auto-watch=true --single-run=false",
+    "doc:custom-elements": "lerna exec --parallel -- wca analyze src --format json --outFile custom-elements.json",
+    "doc:readme": "lerna exec --parallel -- wca analyze src --format markdown --outFile readme.md"
   },
   "//": [
     "\"scripts\": {",
@@ -44,7 +46,8 @@
     "karma-coverage-istanbul-reporter": "^3.0.3",
     "karma-junit-reporter": "^2.0.1",
     "lerna": "^3.22.1",
-    "lerna-wizard": "^1.1.1"
+    "lerna-wizard": "^1.1.1",
+    "web-component-analyzer": "^1.1.6"
   },
   "browserslist": [
     "last 4 version",

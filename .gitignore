@@ -2,8 +2,8 @@
 node_modules/
 .cache/
 
-## dist files
-package/**/dist/
+## Generated files
+packages/**/custom-elements.json
 
 ## Karma reports
 reports/
