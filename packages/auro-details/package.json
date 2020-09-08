@@ -1,6 +1,6 @@
 {
   "name": "auro-details",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "> TODO: description",
   "author": "Sarah Grefalda <sarah.grefalda@alaskaair.com>",
   "homepage": "",
@@ -21,6 +21,5 @@
   "dependencies": {
     "lit-element": "^2.3.1",
     "lit-html": "^1.2.1"
-  },
-  "devDependencies": {}
+  }
 }
