@@ -8,6 +8,7 @@
     "test:watch": "karma start karma.config.js --auto-watch=true --single-run=false",
     "doc:custom-elements": "lerna exec --parallel -- wca analyze src --format json --outFile custom-elements.json",
     "doc:readme": "lerna exec --parallel -- wca analyze src --format markdown --outFile readme.md",
+    "publish": "lerna publish",
     "semantic-release": "lerna exec --concurrency 1 -- semantic-release -e semantic-release-monorepo --dry-run"
   },
   "//": [
