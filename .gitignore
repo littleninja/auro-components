@@ -8,3 +8,7 @@ packages/**/custom-elements.json
 ## Karma reports
 reports/
 coverage/
+
+## packaging
+*.tar
+*.tgz
