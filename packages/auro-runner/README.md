@@ -1,6 +1,6 @@
-# auro-details
+# auro-runner
 
-auro-details provides a summary and detail view of content
+auro-runner provides a summary and detail view of content
 
 ## Properties
 

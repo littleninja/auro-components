@@ -1,13 +1,13 @@
 {
-  "name": "auro-details",
+  "name": "auro-runner",
   "version": "1.0.0",
   "description": "> TODO: description",
   "author": "Sarah Grefalda <sarah.grefalda@alaskaair.com>",
   "homepage": "",
   "license": "ISC",
   "type": "module",
-  "main": "src/auro-details.js",
-  "module": "src/auro-details.js",
+  "main": "src/auro-runner.js",
+  "module": "src/auro-runner.js",
   "directories": {
     "src": "src",
     "test": "__tests__"

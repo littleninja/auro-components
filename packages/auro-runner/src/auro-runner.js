@@ -12,7 +12,7 @@ import { LitElement, html, css } from "lit-element";
  */
 
 // build the component class
-export class AuroDetails extends LitElement {
+export class AuroRunner extends LitElement {
   // constructor() {
   //   super();
   // }
@@ -45,5 +45,5 @@ export class AuroDetails extends LitElement {
 /* istanbul ignore else */
 // define the name of the custom component
 if (!customElements.get("auro-details")) {
-  customElements.define("auro-details", AuroDetails);
+  customElements.define("auro-details", AuroRunner);
 }
