@@ -3,6 +3,7 @@
 // ---------------------------------------------------------------------
 
 import { LitElement, html, css } from "lit-element";
+import styleCss from "./style-css.js";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
@@ -26,19 +27,13 @@ export class AuroRunner extends LitElement {
 
   static get styles() {
     return css`
-      .foo {
-        background: purple;
-      }
+      ${styleCss}
     `;
   }
 
   // function that renders the HTML and CSS into  the scope of the component
   render() {
-    return html`
-      <div class=${this.cssClass}>
-        Walk a little
-      </div>
-    `;
+    return html` <div class=${this.cssClass}>Walk a little</div> `;
   }
 }
 

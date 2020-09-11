@@ -3,13 +3,17 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "postinstall": "lerna bootstrap --hoist",
-    "test": "karma start karma.config.js --coverage",
-    "test:watch": "karma start karma.config.js --auto-watch=true --single-run=false",
+    "build:styles": "npm-run-all --serial styles:preprocess styles:postcss styles:componentize",
     "doc:custom-elements": "lerna exec --parallel -- wca analyze src --format json --outFile custom-elements.json",
     "doc:readme": "lerna exec --parallel -- wca analyze src --format markdown --outFile readme.md",
+    "postinstall": "lerna bootstrap --hoist",
     "publish": "lerna publish",
-    "semantic-release": "lerna exec --concurrency 1 -- semantic-release -e semantic-release-monorepo --dry-run"
+    "semantic-release": "lerna exec --concurrency 1 -- semantic-release -e semantic-release-monorepo --dry-run",
+    "styles:componentize": "sass-render ./packages/**/src/*.scss -t ./scripts/styles-template.js",
+    "styles:postcss": "lerna exec --parallel -- node ../../scripts/postcss",
+    "styles:preprocess": "node-sass ./packages/**/src --output ./packages/**/src",
+    "test": "karma start karma.config.js --coverage",
+    "test:watch": "karma start karma.config.js --auto-watch=true --single-run=false"
   },
   "//": [
     "\"scripts\": {",
@@ -42,6 +46,7 @@
   "devDependencies": {
     "@open-wc/testing": "^2.5.21",
     "@open-wc/testing-karma": "^4.0.3",
+    "autoprefixer": "^9.8.6",
     "deepmerge": "^4.2.2",
     "es-dev-server": "^1.57.2",
     "karma": "^5.1.1",
@@ -49,8 +54,15 @@
     "karma-junit-reporter": "^2.0.1",
     "lerna": "^3.22.1",
     "lerna-wizard": "^1.1.1",
+    "node-sass": "^4.14.1",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^7.0.32",
+    "postcss-custom-properties": "^9.1.1",
+    "postcss-discard-comments": "^4.0.2",
+    "postcss-remove-rules": "^1.0.0",
     "semantic-release": "^17.1.1",
     "semantic-release-monorepo": "^7.0.2",
+    "wc-sass-render": "^1.2.3",
     "web-component-analyzer": "^1.1.6"
   },
   "browserslist": [
