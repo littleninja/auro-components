@@ -13,7 +13,10 @@
     "test": "__tests__"
   },
   "files": [
-    "src"
+    "dist",
+    "src",
+    "!src/*.scss",
+    "!src/*.css"
   ],
   "scripts": {
     "start": "es-dev-server --node-resolve --watch --open"
