@@ -3,7 +3,7 @@
 // ---------------------------------------------------------------------
 
 import { LitElement, html, css } from "lit-element";
-import styleCss from "./style-css.js";
+import styleCss from "./styles-css.js";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
