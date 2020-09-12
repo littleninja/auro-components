@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
+    "build": "npm-run-all --serial clean build:styles build:js",
+    "build:js": "lerna exec --parallel -- rollup -c ../../rollup.config.js",
     "build:styles": "npm-run-all --serial styles:preprocess styles:postcss styles:componentize",
+    "clean": "lerna exec --parallel -- rimraf dist src/*.css src/*-css.js",
     "doc:custom-elements": "lerna exec --parallel -- wca analyze src --format json --outFile custom-elements.json",
     "doc:readme": "lerna exec --parallel -- wca analyze src --format markdown --outFile readme.md",
     "lint:js": "eslint packages/**/src/*.js packages/**/__tests__/*.js",
@@ -46,6 +49,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@open-wc/building-rollup": "^1.9.0",
     "@open-wc/testing": "^2.5.21",
     "@open-wc/testing-karma": "^4.0.3",
     "autoprefixer": "^9.8.6",
