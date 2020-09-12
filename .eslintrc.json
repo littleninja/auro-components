@@ -1,5 +1,9 @@
 {
-  "ignorePatterns": ["es-dev-server.config.js", "karma.config.js"],
+  "ignorePatterns": [
+    "es-dev-server.config.js",
+    "karma.config.js",
+    "rollup.config.js"
+  ],
   "env": {
     "browser": true,
     "es6": true
