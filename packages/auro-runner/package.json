@@ -9,16 +9,13 @@
   "main": "src/auro-runner.js",
   "module": "src/auro-runner.js",
   "directories": {
+    "bin": "dist",
     "src": "src",
     "test": "__tests__"
   },
   "files": [
-    "dist",
-    "src"
+    "dist"
   ],
-  "scripts": {
-    "start": "es-dev-server --node-resolve --watch --open"
-  },
   "dependencies": {
     "lit-element": "^2.3.1",
     "lit-html": "^1.2.1"

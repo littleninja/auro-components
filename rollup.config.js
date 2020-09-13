@@ -17,7 +17,7 @@ const baseConfig = createBasicConfig({
   injectServiceWorker: false,
 });
 
-export default merge(baseConfig, {
+module.exports = merge(baseConfig, {
   input: `src/${process.env.LERNA_PACKAGE_NAME}.js`,
   plugins: [
     // inject css modules
