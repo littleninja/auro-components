@@ -14,9 +14,7 @@
   },
   "files": [
     "dist",
-    "src",
-    "!src/*.scss",
-    "!src/*.css"
+    "src"
   ],
   "scripts": {
     "start": "es-dev-server --node-resolve --watch --open"
