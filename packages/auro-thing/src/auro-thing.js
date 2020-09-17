@@ -3,17 +3,17 @@
 // ---------------------------------------------------------------------
 
 import { LitElement, html, css } from "lit-element";
-import styleCss from "./styles-css.js";
+import styleCss from "./auro-thing.module.scss";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
- * auro-[name] provides a summary and detail view of content
+ * auro-thing does a component thing! (Your description here)
  *
  * @attr {String} cssClass - Applies designated CSS class to DOM element.
  */
 
 // build the component class
-export class Auro[Name] extends LitElement {
+export class AuroThing extends LitElement {
   // constructor() {
   //   super();
   // }
@@ -39,6 +39,6 @@ export class Auro[Name] extends LitElement {
 
 /* istanbul ignore else */
 // define the name of the custom component
-if (!customElements.get("auro-[name]")) {
-  customElements.define("auro-[name]", Auro[Name]);
+if (!customElements.get("auro-thing")) {
+  customElements.define("auro-thing", AuroThing);
 }

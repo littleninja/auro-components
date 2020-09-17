@@ -1,5 +1,5 @@
 import { fixture, expect, html } from "@open-wc/testing";
-import "../src/auro-runner";
+import "../dist/auro-runner";
 
 describe("auro-runner", () => {
   it("says hello", async () => {

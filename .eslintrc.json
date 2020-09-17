@@ -1,9 +1,4 @@
 {
-  "ignorePatterns": [
-    "es-dev-server.config.js",
-    "karma.config.js",
-    "rollup.config.js"
-  ],
   "env": {
     "browser": true,
     "es6": true
@@ -20,9 +15,15 @@
   "plugins": ["lit"],
   "overrides": [
     {
-      "files": ["packages/**/__tests__/*.js"],
+      "files": ["template/__tests__/*.js", "packages/**/__tests__/*.js"],
       "env": {
         "mocha": true
+      }
+    },
+    {
+      "files": ["packages/create/bin/**/*.js"],
+      "env": {
+        "node": true
       }
     }
   ],

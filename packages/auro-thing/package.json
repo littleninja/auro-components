@@ -1,12 +1,11 @@
 {
-  "name": "auro-runner",
+  "name": "auro-thing",
   "version": "1.0.0",
   "description": "> TODO: description",
-  "author": "Sarah Grefalda <sarah.grefalda@alaskaair.com>",
   "homepage": "",
   "license": "ISC",
   "type": "module",
-  "main": "src/auro-runner.js",
+  "main": "dist/auro-thing.js",
   "directories": {
     "bin": "dist",
     "src": "src",
@@ -18,8 +17,8 @@
   "scripts": {
     "build": "run-s clean build:js",
     "build:watch": "run-s clean build:js-watch",
-    "build:js": "rollup -i src/auro-runner.js -o dist/auro-runner.js -c ../../rollup.config.js ",
-    "build:js-watch": "rollup -i src/auro-runner.js -o dist/auro-runner.js -c ../../rollup.config.js --watch.include src/** ",
+    "build:js": "rollup -i src/auro-thing.js -o dist/auro-thing.js -c ../../rollup.config.js ",
+    "build:js-watch": "rollup -i src/auro-thing.js -o dist/auro-thing.js -c ../../rollup.config.js --watch.include src/** ",
     "clean": "rimraf dist",
     "doc:custom-elements": "wca analyze src --format json --outFile custom-elements.json",
     "doc:readme": "wca analyze src --format markdown --outFile readme.md"

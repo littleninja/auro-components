@@ -17,18 +17,19 @@ const baseConfig = createBasicConfig({
   injectServiceWorker: false,
 });
 
-module.exports = merge(baseConfig, {
-  input: `src/${process.env.LERNA_PACKAGE_NAME}.js`,
-  plugins: [
-    // inject css modules
-    postcss({
-      extensions: [".css", ".scss"],
-      autoModules: true,
-      modules: true,
-      plugins: [autoprefixer, postcssCustomProperties, comments],
-    }),
-  ],
-  output: {
-    file: `dist/${process.env.LERNA_PACKAGE_NAME}.js`,
-  },
-});
+module.exports = (args) =>
+  merge(baseConfig, {
+    input: args.i || args.input,
+    plugins: [
+      // inject css modules
+      postcss({
+        extensions: [".css", ".scss"],
+        autoModules: true,
+        modules: true,
+        plugins: [autoprefixer, postcssCustomProperties, comments],
+      }),
+    ],
+    output: {
+      file: args.o || args.file,
+    },
+  });
