@@ -6,6 +6,9 @@ node_modules/
 packages/**/custom-elements.json
 packages/**/dist/
 
+## Lerna
+lerna-debug.log
+
 ## Karma reports
 reports/
 coverage/
