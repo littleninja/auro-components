@@ -1,9 +1,11 @@
 import { fixture, expect, html } from "@open-wc/testing";
-import "../dist/auro-runner";
+import "../dist/auro-thing";
 
-describe("auro-runner", () => {
+describe("auro-thing", () => {
   it("says hello", async () => {
-    const el = await fixture(html`<auro-runner>Hello!</auro-runner>`);
+    const el = await fixture(
+      html`<auro-thing>Hello!</auro-thing>`
+    );
 
     expect(el.textContent).to.contain("Hello!");
   });

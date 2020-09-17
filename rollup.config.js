@@ -1,5 +1,9 @@
 const merge = require("deepmerge");
 const { createBasicConfig } = require("@open-wc/building-rollup");
+const postcss = require("rollup-plugin-postcss");
+const autoprefixer = require("autoprefixer");
+const postcssCustomProperties = require("postcss-custom-properties");
+const comments = require("postcss-discard-comments");
 
 const baseConfig = createBasicConfig({
   // if you need to support older browsers, such as IE11, set the legacyBuild
@@ -13,10 +17,19 @@ const baseConfig = createBasicConfig({
   injectServiceWorker: false,
 });
 
-export default merge(baseConfig, {
-  input: `src/${process.env.LERNA_PACKAGE_NAME}.js`,
-  // use the outputdir option to modify where files are output
-  output: {
-    file: `dist/${process.env.LERNA_PACKAGE_NAME}.js`,
-  },
-});
+module.exports = (args) =>
+  merge(baseConfig, {
+    input: args.i || args.input,
+    plugins: [
+      // inject css modules
+      postcss({
+        extensions: [".css", ".scss"],
+        autoModules: true,
+        modules: true,
+        plugins: [autoprefixer, postcssCustomProperties, comments],
+      }),
+    ],
+    output: {
+      file: args.o || args.file,
+    },
+  });

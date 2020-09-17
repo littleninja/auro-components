@@ -10,7 +10,7 @@ module.exports = (config) => {
         {
           pattern: config.grep
             ? config.grep
-            : "packages/**/__tests__/**/*.test.js",
+            : "packages/!(create)/**/__tests__/**/*.test.js",
           type: "module",
         },
       ],
