@@ -26,17 +26,19 @@ module.exports = (config) => {
         preserveSymlinks: true,
       },
 
-      reporters: ["progress", "junit", "coverage-istanbul"],
-      coverageIstanbulReporter: {
-        thresholds: {
-          global: {
-            statements: 80,
-            lines: 80,
-            branches: 80,
-            functions: 80,
-          },
-        },
-      },
+      reporters: ["progress", "junit"],
+      // todo
+      // reporters: ["progress", "junit", "coverage-istanbul"],
+      // coverageIstanbulReporter: {
+      //   thresholds: {
+      //     global: {
+      //       statements: 80,
+      //       lines: 80,
+      //       branches: 80,
+      //       functions: 80,
+      //     },
+      //   },
+      // },
       junitReporter: {
         outputDir: path.join(__dirname, "reports"),
       },
