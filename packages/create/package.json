@@ -13,12 +13,10 @@
     "bin",
     "template"
   ],
+  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/littleninja/auro-components.git"
-  },
-  "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "bugs": {
     "url": "https://github.com/littleninja/auro-components/issues"

@@ -26,10 +26,7 @@
   },
   "author": "",
   "license": "ISC",
-  "publishConfig": {
-    "access": "restricted"
-  },
-  "private": true,
+  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
   "dependencies": {},
   "devDependencies": {
     "@open-wc/building-rollup": "^1.9.0",
