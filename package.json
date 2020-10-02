@@ -15,9 +15,9 @@
     "lint:js": "eslint packages/**/src/*.js packages/**/__tests__/*.js",
     "lint:styles": "stylelint packages/**/src/*.scss",
     "postinstall": "lerna bootstrap --hoist",
-    "prepublish": "run-s build lint test doc",
     "publish:dry-run": "lerna exec --concurrency 1 -- semantic-release -e semantic-release-monorepo --dry-run",
     "publish": "lerna exec --concurrency 1 -- semantic-release -e semantic-release-monorepo",
+    "quality-check": "run-s build lint test doc",
     "storybook": "run-s doc:custom-elements storybook:start",
     "storybook:start": "start-storybook",
     "storybook:build": "build-storybook",
@@ -26,9 +26,13 @@
   },
   "author": "",
   "license": "ISC",
-  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "dependencies": {},
   "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
     "@open-wc/building-rollup": "^1.9.0",
     "@open-wc/demoing-storybook": "^2.4.1",
     "@open-wc/testing": "^2.5.21",
@@ -38,6 +42,7 @@
     "es-dev-server": "^1.57.2",
     "eslint": "^7.8.1",
     "eslint-plugin-lit": "^1.2.2",
+    "husky": "^4.3.0",
     "karma": "^5.1.1",
     "karma-coverage-istanbul-reporter": "^3.0.3",
     "karma-junit-reporter": "^2.0.1",
@@ -63,8 +68,13 @@
   ],
   "husky": {
     "hooks": {
-      "pre-commit": "npm-run-all test lint bundler postinstall",
+      "pre-commit": "npm run quality-check",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
   }
 }
