@@ -1,5 +1,5 @@
 {
-  "name": "@rosie/mono",
+  "name": "mono",
   "version": "1.0.1",
   "description": "",
   "scripts": {
@@ -16,7 +16,8 @@
     "lint:styles": "stylelint packages/**/src/*.scss",
     "postinstall": "lerna bootstrap --hoist",
     "prepublish": "run-s build lint test doc",
-    "publish": "lerna exec --concurrency 1 -- semantic-release -e semantic-release-monorepo --dry-run",
+    "publish:dry-run": "lerna exec --concurrency 1 -- semantic-release -e semantic-release-monorepo --dry-run",
+    "publish": "lerna exec --concurrency 1 -- semantic-release -e semantic-release-monorepo",
     "storybook": "run-s doc:custom-elements storybook:start",
     "storybook:start": "start-storybook",
     "storybook:build": "build-storybook",
@@ -28,6 +29,7 @@
   "publishConfig": {
     "access": "restricted"
   },
+  "private": true,
   "dependencies": {},
   "devDependencies": {
     "@open-wc/building-rollup": "^1.9.0",

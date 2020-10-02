@@ -6,7 +6,7 @@ name: Node.js CI
 on: [push]
 
 jobs:
-  build:
+  publish-dry-run:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -15,7 +15,9 @@ jobs:
           node-version: 12
           # temporary for testing
           registry-url: 'https://npm.pkg.github.com'
+          scope: '@scope'
       - run: npm ci
       - run: npm run prepublish
+      - run: npm run publish:dry-run
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
