@@ -27,6 +27,8 @@
   "author": "",
   "license": "ISC",
   "publishConfig": {
+    "access": "public",
+    "scope": "@littleninja",
     "registry": "https://npm.pkg.github.com/"
   },
   "dependencies": {},

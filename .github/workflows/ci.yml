@@ -13,9 +13,6 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12
-          # temporary for testing
-          registry-url: https://npm.pkg.github.com/
-          scope: '@littleninja'
       - run: npm ci
       - run: npm run quality-check
       - run: npm run publish:dry-run

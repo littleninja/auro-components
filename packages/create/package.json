@@ -13,7 +13,11 @@
     "bin",
     "template"
   ],
-  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
+  "publishConfig": { 
+    "access": "public",
+    "scope": "@littleninja",
+    "registry": "https://npm.pkg.github.com/"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/littleninja/auro-components.git"

@@ -14,7 +14,11 @@
   "files": [
     "dist"
   ],
-  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
+  "publishConfig": { 
+    "access": "public",
+    "scope": "@littleninja",
+    "registry": "https://npm.pkg.github.com/"
+  },
   "scripts": {
     "build": "run-s clean build:js",
     "build:watch": "run-s clean build:js-watch",
