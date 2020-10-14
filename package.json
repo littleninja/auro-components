@@ -1,7 +1,14 @@
 {
   "name": "@littleninja/auro-component-root",
   "version": "1.0.1",
-  "description": "",
+  "description": "A component library for Auro primitive components",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/littleninja/auro-components.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/littleninja"
+  },
   "scripts": {
     "build": "lerna run build",
     "build:watch": "lerna run build:watch",

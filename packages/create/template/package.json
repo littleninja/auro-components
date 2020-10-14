@@ -2,6 +2,13 @@
   "name": "@littleninja/[namespace]-[name]",
   "version": "1.0.0",
   "description": "> TODO: description",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/littleninja/auro-components.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/littleninja"
+  },
   "homepage": "",
   "license": "ISC",
   "type": "module",

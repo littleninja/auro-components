@@ -1,7 +1,14 @@
 {
   "name": "@littleninja/create-auro-component",
   "version": "1.0.1",
-  "description": "> TODO: description",
+  "description": "Generator to create new Auro primitive components",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/littleninja/auro-components.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/littleninja"
+  },
   "author": "Sarah Grefalda <sarah.grefalda@alaskaair.com>",
   "homepage": "https://github.com/littleninja/auro-components#readme",
   "license": "ISC",
@@ -13,10 +20,6 @@
     "bin",
     "template"
   ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/littleninja/auro-components.git"
-  },
   "bugs": {
     "url": "https://github.com/littleninja/auro-components/issues"
   },
