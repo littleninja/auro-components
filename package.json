@@ -1,5 +1,5 @@
 {
-  "name": "auro-component-root",
+  "name": "@littleninja/auro-component-root",
   "version": "1.0.1",
   "description": "",
   "scripts": {
@@ -26,11 +26,6 @@
   },
   "author": "",
   "license": "ISC",
-  "publishConfig": {
-    "access": "public",
-    "scope": "@littleninja",
-    "registry": "https://npm.pkg.github.com/"
-  },
   "dependencies": {},
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",

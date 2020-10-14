@@ -1,5 +1,5 @@
 {
-  "name": "auro-runner",
+  "name": "@littleninja/auro-runner",
   "version": "1.0.1",
   "description": "> TODO: description",
   "author": "Sarah Grefalda <sarah.grefalda@alaskaair.com>",
@@ -15,11 +15,6 @@
   "files": [
     "dist"
   ],
-  "publishConfig": {
-    "access": "public",
-    "scope": "@littleninja",
-    "registry": "https://npm.pkg.github.com/"
-  },
   "scripts": {
     "build": "run-s clean build:js",
     "build:watch": "run-s clean build:js-watch",

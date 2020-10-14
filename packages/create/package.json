@@ -1,5 +1,5 @@
 {
-  "name": "create-auro-component",
+  "name": "@littleninja/create-auro-component",
   "version": "1.0.1",
   "description": "> TODO: description",
   "author": "Sarah Grefalda <sarah.grefalda@alaskaair.com>",
@@ -13,11 +13,6 @@
     "bin",
     "template"
   ],
-  "publishConfig": { 
-    "access": "public",
-    "scope": "@littleninja",
-    "registry": "https://npm.pkg.github.com/"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/littleninja/auro-components.git"

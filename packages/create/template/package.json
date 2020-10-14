@@ -1,5 +1,5 @@
 {
-  "name": "[namespace]-[name]",
+  "name": "@littleninja/[namespace]-[name]",
   "version": "1.0.0",
   "description": "> TODO: description",
   "homepage": "",
@@ -14,11 +14,6 @@
   "files": [
     "dist"
   ],
-  "publishConfig": { 
-    "access": "public",
-    "scope": "@littleninja",
-    "registry": "https://npm.pkg.github.com/"
-  },
   "scripts": {
     "build": "run-s clean build:js",
     "build:watch": "run-s clean build:js-watch",
