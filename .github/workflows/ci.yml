@@ -17,6 +17,6 @@ jobs:
           scope: '@littleninja'
       - run: npm ci
       - run: npm run quality-check
-      - run: npm run publish:dry-run
+      - run: npm run semantic-release:dry-run
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
