@@ -15,3 +15,5 @@ A component to place a little runner on the page
 ```js story
 export const Simple = () => html` <auro-runner>Hello World</auro-runner> `;
 ```
+
+Adding a bit of fluff for a new component version!
