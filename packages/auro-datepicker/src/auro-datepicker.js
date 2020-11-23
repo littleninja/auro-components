@@ -18,7 +18,11 @@ const friendlyMonth = [
   "October",
   "November",
   "December"
-];
+],
+// eslint-disable-next-line max-params
+isToday = (today, year, month, date) => today.getFullYear() === year &&
+    today.getMonth() === month &&
+    today.getDate() === Number(date);
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
@@ -57,28 +61,30 @@ export class AuroDatepicker extends LitElement {
     return css`${unsafeCSS(styles)}`;
   }
 
+  /* eslint-disable one-var, no-magic-numbers, no-mixed-operators, max-params */
   getCalendarDates() {
-    /* eslint-disable one-var, no-magic-numbers, no-mixed-operators */
+    const today = new Date();
     const { year } = this;
     const month = this.month + this.monthOffset;
     const offset = new Date(year, month, 1).getDay();
     const lastDate = new Date(year, month + 1, 0).getDate();
     const endOffset = 7 - (offset + lastDate % 7);
+
     const emptyStartDates = Array.from({ length: offset }, () => "empty");
     const dates = Array.from({ length: lastDate }, (date, index) => index + 1);
     const emptyEndDates = Array.from({ length: endOffset }, () => "empty");
-    /* eslint-enable one-var, no-magic-numbers, no-mixed-operators */
 
     return html`
-          ${[
-            ...emptyStartDates,
-            ...dates,
-            ...emptyEndDates
-            ].map((date) => html`
-                <span>${date}</span>
-              `)}
-        `;
+    ${[
+      ...emptyStartDates,
+      ...dates,
+      ...emptyEndDates
+    ].map((date) => html`
+    <span class="${isToday(today, year, month, date) ? 'datepicker__today' : ''}">${date}</span>
+    `)}
+    `;
   }
+  /* eslint-enable one-var, no-magic-numbers, no-mixed-operators, max-params */
 
   prevMonth() {
     this.monthOffset -= 1;
