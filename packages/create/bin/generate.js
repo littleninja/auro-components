@@ -258,9 +258,9 @@ const generateFromTemplate = async () => {
     "[namespace]-[name].js": `${lowerKebabCase(
       params.namespace
     )}-${lowerKebabCase(params.name)}.js`,
-    "[namespace]-[name].module.scss": `${lowerKebabCase(
+    "[namespace]-[name].styles.js": `${lowerKebabCase(
       params.namespace
-    )}-${lowerKebabCase(params.name)}.module.scss`,
+    )}-${lowerKebabCase(params.name)}.styles.js`,
     "[namespace]-[name].stories.md": `${lowerKebabCase(
       params.namespace
     )}-${lowerKebabCase(params.name)}.stories.md`,

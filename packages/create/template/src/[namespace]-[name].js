@@ -2,8 +2,8 @@
 // See LICENSE in the project root for license information.
 // ---------------------------------------------------------------------
 
-import { LitElement, html, css } from "lit-element";
-import styleCss from "./[namespace]-[name].module.scss";
+import { LitElement, html } from "lit-element";
+import styles from "./[namespace]-[name].styles.js";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
@@ -26,9 +26,7 @@ export class [Namespace][Name] extends LitElement {
   }
 
   static get styles() {
-    return css`
-      ${styleCss}
-    `;
+    return styles;
   }
 
   // function that renders the HTML and CSS into  the scope of the component

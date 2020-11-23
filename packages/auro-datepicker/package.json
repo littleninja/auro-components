@@ -1,7 +1,7 @@
 {
-  "name": "@littleninja/auro-runner",
-  "version": "1.0.1",
-  "description": "A little runner!",
+  "name": "@littleninja/auro-datepicker",
+  "version": "1.0.0",
+  "description": "> TODO: description",
   "repository": {
     "type": "git",
     "url": "https://github.com/littleninja/auro-components.git"
@@ -9,11 +9,10 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/littleninja"
   },
-  "author": "Sarah Grefalda <sarah.grefalda@alaskaair.com>",
   "homepage": "",
   "license": "ISC",
   "type": "module",
-  "main": "src/auro-runner.js",
+  "main": "dist/auro-datepicker.js",
   "directories": {
     "bin": "dist",
     "src": "src",
@@ -25,11 +24,16 @@
   "scripts": {
     "build": "run-s clean build:js",
     "build:watch": "run-s clean build:js-watch",
-    "build:js": "rollup -i src/auro-runner.js -o dist/auro-runner.js -c ../../rollup.config.js ",
-    "build:js-watch": "rollup -i src/auro-runner.js -o dist/auro-runner.js -c ../../rollup.config.js --watch.include src/** ",
+    "build:js": "rollup --input src/auro-datepicker.js --file dist/auro-datepicker.js --config ../../rollup.config.js ",
+    "build:js-watch": "rollup --input src/auro-datepicker.js --file dist/auro-datepicker.js --config ../../rollup.config.js --watch",
     "clean": "rimraf dist",
     "doc:custom-elements": "wca analyze src --format json --outFile custom-elements.json",
     "doc:readme": "wca analyze src --format markdown --outFile readme.md"
+  },
+  "peerDependencies": {
+    "@alaskaairux/design-tokens": "^3.0.0",
+    "@webcomponents/webcomponentsjs": "^2.5.0",
+    "focus-visible": "^5.2.0"
   },
   "dependencies": {
     "lit-element": "^2.3.1",

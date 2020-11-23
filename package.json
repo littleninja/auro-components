@@ -12,8 +12,6 @@
   "scripts": {
     "build": "lerna run build",
     "build:watch": "lerna run build:watch",
-    "build:js": "lerna run build:js",
-    "build:js-watch": "lerna run build:js-watch",
     "clean": "lerna run clean",
     "create": "node packages/create/bin/generate",
     "doc": "run-p doc:custom-elements",
@@ -41,6 +39,7 @@
     "@open-wc/demoing-storybook": "^2.4.1",
     "@open-wc/testing": "^2.5.21",
     "@open-wc/testing-karma": "^4.0.3",
+    "@rollup/pluginutils": "^4.1.0",
     "autoprefixer": "^9.8.6",
     "deepmerge": "^4.2.2",
     "es-dev-server": "^1.57.2",
