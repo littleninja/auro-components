@@ -19,10 +19,30 @@ const friendlyMonth = [
   "November",
   "December"
 ],
-// eslint-disable-next-line max-params
-isToday = (today, year, month, date) => today.getFullYear() === year &&
-    today.getMonth() === month &&
-    today.getDate() === Number(date);
+  /* eslint-disable no-extra-parens, max-params, one-var, no-magic-numbers, no-mixed-operators, max-params */
+  getDateView = (date) => (date ? html`<button>${date}</button>` : ''),
+  getMonthView = (year, month) => {
+    const lastDate = new Date(year, month + 1, 0).getDate();
+    const startOffset = new Date(year, month, 1).getDay();
+    const endOffset = 7 - (startOffset + lastDate % 7);
+    const emptyStartDates = Array.from({ length: startOffset }, () => getDateView());
+    const dates = Array.from({ length: lastDate }, (date, index) => getDateView(index + 1));
+    const emptyEndDates = Array.from({ length: endOffset }, () => getDateView());
+
+    return html`
+      <div>
+      <label class="datepicker__label">${friendlyMonth[month]} ${year}</label>
+      <ul class="datepicker">
+      ${[
+        ...emptyStartDates,
+        ...dates,
+        ...emptyEndDates,
+      ].map((dateView) => html`<li class="datepicker__date">${dateView}</li>`)}
+      </ul>
+      </div>
+    `
+  };
+  /* eslint-enable max-params, one-var, no-magic-numbers, no-mixed-operators, max-params */
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
@@ -35,7 +55,7 @@ isToday = (today, year, month, date) => today.getFullYear() === year &&
 export class AuroDatepicker extends LitElement {
   constructor() {
     super();
-    const now = new Date(Date.now());
+    const now = new Date();
 
     this.year = now.getFullYear();
     this.month = now.getMonth();
@@ -61,30 +81,19 @@ export class AuroDatepicker extends LitElement {
     return css`${unsafeCSS(styles)}`;
   }
 
-  /* eslint-disable one-var, no-magic-numbers, no-mixed-operators, max-params */
   getCalendarDates() {
-    const today = new Date();
-    const { year } = this;
-    const month = this.month + this.monthOffset;
-    const offset = new Date(year, month, 1).getDay();
-    const lastDate = new Date(year, month + 1, 0).getDate();
-    const endOffset = 7 - (offset + lastDate % 7);
-
-    const emptyStartDates = Array.from({ length: offset }, () => "empty");
-    const dates = Array.from({ length: lastDate }, (date, index) => index + 1);
-    const emptyEndDates = Array.from({ length: endOffset }, () => "empty");
+    /* eslint-disable no-magic-numbers */
+    const focusMonthDate = new Date(this.year, this.month + this.monthOffset),
+    nextMonthDate = new Date(this.year, this.month + this.monthOffset + 1),
+    previousMonthDate = new Date(this.year, this.month + this.monthOffset - 1);
+    /* eslint-enable no-magic-numbers */
 
     return html`
-    ${[
-      ...emptyStartDates,
-      ...dates,
-      ...emptyEndDates
-    ].map((date) => html`
-    <span class="${isToday(today, year, month, date) ? 'datepicker__today' : ''}">${date}</span>
-    `)}
+      ${getMonthView(previousMonthDate.getFullYear(), previousMonthDate.getMonth())}
+      ${getMonthView(focusMonthDate.getFullYear(), focusMonthDate.getMonth())}
+      ${getMonthView(nextMonthDate.getFullYear(), nextMonthDate.getMonth())}
     `;
   }
-  /* eslint-enable one-var, no-magic-numbers, no-mixed-operators, max-params */
 
   prevMonth() {
     this.monthOffset -= 1;
@@ -94,18 +103,22 @@ export class AuroDatepicker extends LitElement {
     this.monthOffset += 1;
   }
 
+  // keyboard navigation
+  //   up arrow: -7 days
+  //   down arrow: +7 days
+  //   left arrow: -1 day
+  //   right arrow: +1 day
+  //   space/enter: toggle date selection
+  //   tab/shift-tab: exit and return focus
+
   render() {
-    const currentMonth = new Date(this.year, this.month + this.monthOffset);
-
-
-return html`
-      <div>
-        ${friendlyMonth[currentMonth.getMonth()]} ${currentMonth.getFullYear()}
-      </div>
-      <button @click=${this.prevMonth}>prev</button>
-      <button @click=${this.nextMonth}>next</button>
-      <div class="datepicker">${this.getCalendarDates()}</div>
-    `;
+    return html`
+          <button @click=${this.prevMonth}>prev</button>
+          <button @click=${this.nextMonth}>next</button>
+          <div class="datepicker__window">
+            ${this.getCalendarDates()}
+          <div>
+        `;
   }
 }
 

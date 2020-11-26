@@ -1,12 +1,23 @@
 @import "~@alaskaairux/design-tokens/dist/tokens/SCSSVariables";
 
 :host {
-  font-family: $auro-font-family-default;
+  font-family: var(--auro-font-family-default);
 }
 .datepicker {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
+  list-style: none;
 }
-.datepicker__today {
+.datepicker__date {
+  margin: 8px 12px;
+}
+.datepicker__date--today {
   background-color: rgba(0, 100, 255, 0.5);
+}
+.datepicker__label {
+  width: 100%;
+}
+.datepicker__window {
+  display: flex;
+  overflow: hidden;
 }
