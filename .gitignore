@@ -13,6 +13,9 @@ lerna-debug.log
 reports/
 coverage/
 
+## Visual regression screenshots
+e2e/.tmp
+
 ## Packaging
 *.tar
 *.tgz

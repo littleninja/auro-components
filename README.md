@@ -2,12 +2,24 @@
 
 A component library for the Alaska Airline's Auro design system.
 
-## Installing
+## Getting started
 
-### Example in React
+```shell
+npm install
+```
 
-### Example in vanilla HTML
+To start developing a new component:
 
-### Bundled assets and CDN
+```shell
+npm run create -- --name zinger
+> Well done! The new HTML Custom Element auro-zinger has been created!
+> Dir: packages/auro-zinger
+```
 
-## Development
+Ready to see it? Build the element and styles and start Storybook:
+
+```shell
+npm run build
+npm run storybook
+```
+
